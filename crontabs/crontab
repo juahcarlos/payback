@@ -1,0 +1,9 @@
+
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PYTHONPATH=/whoer:/whoer/crontabs
+
+
+# 15 1 * * * www-data cd /whoer/crontabs && /bin/bash crons/remind.sh >> /var/log/cron.log 2>&1
+# 3 * * * * www-data cd /whoer/crontabs && /bin/bash crons/nwcstpr.sh >> /var/log/cron.log 2>&1
+# 5 * * * * www-data cd /whoer/crontabs && /bin/bash crons/nwcstcp.sh >> /var/log/cron.log 2>&1

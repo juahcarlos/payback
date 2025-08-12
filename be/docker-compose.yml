@@ -1,0 +1,44 @@
+---
+# version: "3.3"
+networks:
+  wh:
+    external: true
+    driver: bridge
+
+services:
+  be:
+    network_mode: "host"
+    image: be:4
+    container_name: be
+    hostname: be
+    restart: unless-stopped
+    
+    environment:
+      PYTHONPATH:  ../
+      REDIS: redis://0.0.0.0/0
+      GRPC_HOST: 0.0.0.0
+      GRPC_PORT: 9093
+      BASE_URL: http://0.0.0.0:8093
+      BE_HOST: http://0.0.0.0:8093
+      URL_CALLBACK: http://0.0.0.0:8093/payment/confirmation/cryptomus
+      ENABLE_METRICS: 1
+      USE_EXCLUDED_ENDPOINTS: 0
+      FREEK_API_URI: https://pay.fk.money/?
+      FREEK_INVOICE_API_URI: https://api.fk.life/v1/orders/create
+
+    volumes:
+      - .:/ws/be
+      - ./app:/ws/be/app
+      - ../langs:/ws/langs
+      - ../libs:/ws/libs
+      - ./db:/ws/be/db
+      - ../dbm:/ws/dbm
+      - ../grpc_lib:/ws/grpc_lib
+      - ./geoip:/ws/be/geoip
+      - ./misc:/ws/be/misc
+      - /var/log/be:/var/log/be
+      - ../config.py:/ws/config.py
+      - ./config_be.py:/ws/be/config_be.py
+
+    # command: python -c "import sys; print(sys.path)"
+    command: uvicorn app.main:app --host 0.0.0.0 --workers 1 --port 8093 --proxy-headers --forwarded-allow-ips *

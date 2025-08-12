@@ -1,0 +1,44 @@
+---
+version: "3.8"
+
+networks:
+  wh:
+    external: true
+    driver: bridge
+
+services:
+  crontabs:
+    networks:
+      - wh
+    image: crontabs:1
+    container_name: crontabs
+    hostname: crontabs
+    environment:
+      PYTHONPATH: ../
+      DATABASE: whdevel
+      GRPC_PORT: 9092
+      GRPC_HOST: grpcdb
+    dns:
+      - 8.8.8.8
+    volumes:
+      - .:/ws/crontabs
+      - ../langs:/ws/langs
+      - ../libs:/ws/libs
+      - ../dbm:/ws/dbm
+      - ../dbs:/ws/dbs
+      - ./env.dbloc:/run/secrets/env:ro
+      - ./run.sh:/ws/crontabs/run.sh
+      - ../cert_gen:/ws/cert_gen
+      - ../config.py:/ws/config.py
+      - ../setup.cfg:/ws/crontabs/setup.cfg
+      - ../pyproject.toml:/ws/pyproject.toml:ro
+      - ./pyproject.toml:/ws/crontabs/pyproject.toml:ro
+      - ./crontab:/etc/cron.d/app-cron:ro
+      - /var/log/syslog:/var/log/syslog
+      - /var/log/lastlog:/var/log/lastlog
+      - /var/log/cron.log:/var/log/cron.log
+
+    working_dir: /ws/crontabs
+
+
+

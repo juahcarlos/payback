@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "ws"
+version = "0.1.0"
+package-mode = false
+
+
+[tool.black]
+line-length = 88
+check = true
+diff = true
+exclude = ".*/grpc_lib/.*"
+
+
+[tool.isort]
+profile = ""
+known_third_party = ["pytest"]
+known_first_party = ["dbm", "langs", "libs"]
+multi_line_output = 3
+force_grid_wrap = 0
+use_parentheses = true
+include_trailing_comma = true
+line_length = 88
+force_single_line = false
+ensure_newline_before_comments = true
+skip = ["grpc_lib"]

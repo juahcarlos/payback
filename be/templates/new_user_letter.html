@@ -1,0 +1,220 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script>
+        function copyToClipboard() {
+            const text = document.getElementById("authCode").innerText;
+            navigator.clipboard.writeText(text).then(() => {
+            }).catch(err => {
+                console.error("Failed to copy text: ", err);
+            });
+        }
+    </script>
+</head>
+<body style="width: 100%; overflow-x: hidden;">
+<table style="box-sizing: border-box; overflow: hidden; margin: 0 auto;">
+<!-- Logo  -->
+    <tr>
+        <td>
+            <img style="display: block; margin: 0 auto;" src="https://whox.is/mail-icons/whox.png" alt="whox">
+        </td>
+    </tr>
+<!-- Thanks  -->
+    <tr>
+        <td style="text-align: center;">
+            <p style="margin: 40px 0 10px; font-family: Arial, sans-serif; font-size: 24px; line-height: 28px; font-weight: 400;">
+                {{thanks}}
+            </p>
+            <p style="max-width: 400px; margin: 0 auto; font-family: Arial, sans-serif; font-size: 30px; line-height: 38px; font-weight: 500;">
+                {{setup_plan}}
+            </p>
+        </td>
+    </tr>
+<!-- Text  -->
+    <tr>
+        <td style="text-align: center;">
+            <p style="margin: 40px 0 0; font-family: Arial, sans-serif; font-size: 18px; line-height: 22px; font-weight: 400; color: #8796AB;">
+                {{your_code}}
+            </p>
+        </td>
+    </tr>
+<!-- Code  -->
+    <tr>
+        <td style="position: relative; text-align: center;">
+            <!-- cloud -->
+            <div style="display: inline-block; text-align: center;">
+            <span id="authCode" style=" display: inline-block; margin: 40px 4px 0 0; font-family: Arial, sans-serif; font-size: 32px; line-height: 22px; font-weight: 500; color: #10A6CA;">
+                {{code}}
+            </span>
+                <button onclick="copyToClipboard()" style="margin: 40px 0 0 8px; border: 0; padding: 0; background: transparent; cursor: pointer;">
+                    <img style="display: inline-block;" src="https://whox.is/mail-icons/copy.png" alt="copy">
+                </button>
+            </div>
+        </td>
+    </tr>
+<!-- Text  -->
+    <tr>
+        <td>
+            <p style="max-width: 400px; text-align: center; margin: 50px auto 24px; font-family: Arial, sans-serif; font-size: 24px; line-height: 100%; font-weight: 400; color: #212936;">
+                {{install_client}}
+            </p>
+        </td>
+    </tr>
+<!--  Download Links  -->
+    <tr>
+        <td style="max-width: 400px; margin: 24px auto 0; text-align: center;">
+            <table align="center" style="text-align: center; margin-top: 24px;">
+                <tr>
+                    <td>
+                        <a href="https://get.whox.is/download/whox/WhoX.exe" style="display: block; width: 80px; text-decoration: none; cursor: pointer;">
+                            <img style="display: block; margin: 0 auto; width: 50px; height: 50px; object-fit: contain;" src="https://whox.is/mail-icons/windows.png" alt="Windows">
+                            <p style="margin: 4px 0 0; text-align: center; font-family: Arial, sans-serif; font-size: 16px; line-height: 18px; font-weight: 400; color: #212936;">
+                                Windows
+                            </p>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://get.whox.is/download/whox/WhoX.dmg" style="display: block; width: 80px; text-decoration: none; cursor: pointer;">
+                            <img style="display: block; margin: 0 auto; width: 50px; height: 50px; object-fit: contain;" src="https://whox.is/mail-icons/macos.png" alt="OS X">
+                            <p style="margin: 4px 0 0; text-align: center; font-family: Arial, sans-serif; font-size: 16px; line-height: 18px; font-weight: 400; color: #212936;">
+                                OS X
+                            </p>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://whoer.net/blog/{{how_to_install_on_linux}}" style="display: block; width: 80px; text-decoration: none; cursor: pointer;">
+                            <img style="display: block; margin: 0 auto; width: 50px; height: 50px; object-fit: contain;" src="https://whox.is/mail-icons/linux.png" alt="Linux">
+                            <p style="margin: 4px 0 0; text-align: center; font-family: Arial, sans-serif; font-size: 16px; line-height: 18px; font-weight: 400; color: #212936;">
+                                Linux
+                            </p>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="display: block; text-align: center;">
+            <table align="center" style="margin: 24px auto;">
+                <tr>
+                    <td>
+                        <a href="https://play.google.com/store/apps/details?id=com.whoervpn.provider&hl={{mail_icons_play_google}}" style="display: block; width: 80px; text-decoration: none; cursor: pointer;">
+                            <img style="display: block; width: 50px; height: 50px; object-fit: contain; margin: 0 auto;" src="https://whox.is/mail-icons/android.png" alt="Android">
+                            <p style="margin: 4px 0 0; text-align: center; font-family: Arial, sans-serif; font-size: 16px; line-height: 18px; font-weight: 400; color: #212936;">
+                                Android
+                            </p>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://apps.apple.com/us/app/{{mail_icons_apple_app}}" style="display: block; width: 80px; text-decoration: none; cursor: pointer;">
+                            <img style="display: block; width: 50px; height: 50px; object-fit: contain; margin: 0 auto;" src="https://whox.is/mail-icons/ios.png" alt="IOS">
+                            <p style="margin: 4px 0 0; text-align: center; font-family: Arial, sans-serif; font-size: 16px; line-height: 18px; font-weight: 400; color: #212936;">
+                                IOS
+                            </p>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+<!--  Coupon  -->
+    <tr>
+        <td style="text-align: center; position: relative;">
+            <!-- cloud_two -->
+            <p style="margin: 50px auto 0; max-width: 400px; font-family: Arial, sans-serif; font-size: 24px; line-height: 28px; font-weight: 400; color: #212936;">
+                {{suggestion}} <span style="text-decoration: none; color: #0290E0;">{{coupon_percent}}%</span> {{suggestion_next}}
+            </p>
+            <p style="margin: 24px auto 0; font-family: Arial, sans-serif; font-size: 24px; line-height: 28px; font-weight: 400; text-transform: uppercase; border-radius: 40px; padding: 14px 24px; box-sizing: border-box; background: #fff; border: 1px solid #008DE4; max-width: 400px; color: #212936;">
+                {{coupon}}
+            </p>
+            <p style="margin: 8px 0 0; color: #8796AB; font-family: Arial, sans-serif; font-size: 18px; line-height: 22px; font-weight: 400;">
+                * {{coupon_valid}}
+            </p>
+        </td>
+    </tr>
+<!--  Text and Links  -->
+    <tr>
+        <td style="text-align: center;">
+            <p style="margin: 50px auto 0; max-width: 400px; font-family: Arial, sans-serif; font-size: 24px; line-height: 28px; color: #000; font-weight: 400;">
+                {{in_attachement}}
+            </p>
+            <p style="margin: 24px auto 0; max-width: 400px; font-family: Arial, sans-serif; font-size: 20px; line-height: 100%; color: #000; font-weight: 400;">
+                {{can_download}} <a style="color: #0290E0; text-decoration: underline" href="https://openvpn.net/community-downloads/">OpenVPN,</a>
+                <a style="color: #0290E0; text-decoration: underline"
+                   href="https://www.sparklabs.com/viscosity/download/">Viscosity,</a>
+                <a style="color: #0290E0; text-decoration: underline" href="{{tullenblick_link}}">Tunnelblick</a>
+            </p>
+            <p style="text-align: center; margin: 16px auto 0; font-family: Arial, sans-serif; font-size: 18px; line-height: 22px; font-weight: 400;">
+                {{read}} <a style="text-decoration: underline; color: #8796AB;" href="https://whoer.net/blog/{{lang}}/categories/settings/">{{how_to_set_up}}</a>.
+            </p>
+        </td>
+    </tr>
+<!-- Fox   -->
+    <tr>
+        <td>
+            <img style="display: block; max-width: 200px; max-height: 200px; margin: 50px auto;" src="https://whox.is/mail-icons/memo.png" alt="fox">
+        </td>
+    </tr>
+<!--  Footer  -->
+    <tr>
+        <td style="background: #10101A; padding: 40px 0 34px; box-sizing: border-box; width: 100%; border-radius: 24px;">
+            <img style="display: block; margin: 0 auto; width: 136px; height: 40px;" src="https://whox.is/mail-icons/whox-dark.png" alt="whox-dark">
+            <table align="center" cellspacing="0" cellpadding="0" style="margin: 24px auto 0; text-align: center;">
+                <tr>
+                    <td style="width: 24px; height: 24px; padding: 0 12px;">
+                        <a style="display: block; cursor: pointer; width: 24px; height: 24px;" href="https://www.youtube.com/@WhoerNetEn/videos">
+                            <img style="display: block;width: 24px; height: 15px; padding: 4px 0 0;" src="https://whox.is/mail-icons/youtube.png" alt="youtube">
+                        </a>
+                    </td>
+                    <td style="width: 24px; height: 24px; padding: 0 12px;">
+                        <a style="display: block; cursor: pointer; width: 24px; height: 24px;" href="https://www.instagram.com/whoer_net?igsh=enUweXdtanZrMXJr">
+                            <img style="display: block; margin: 0 auto; width: 16px; height: 15px; padding: 4px 0 0;" src="https://whox.is/mail-icons/instagram.png" alt="instagram">
+                        </a>
+                    </td>
+                    <td style="width: 24px; height: 24px; padding: 0 12px;">
+                        <a style="display: block; cursor: pointer; width: 24px; height: 24px;" href="https://vk.com/whoer">
+                            <img style="display: block; margin: 0 auto; width: 22px; height: 22px;" src="https://whox.is/mail-icons/vk.png" alt="vk">
+                        </a>
+                    </td>
+                    <td style="width: 24px; height: 24px; padding: 0 12px;">
+                        <a style="display: block; cursor: pointer; width: 24px; height: 24px;" href="https://x.com/{{mail_icons_x}}">
+                            <img style="display: block; margin: 0 auto; width: 16px; height: 15px; padding: 4px 0 0;" src="https://whox.is/mail-icons/x.png" alt="x">
+                        </a>
+                    </td>
+                    <td style="width: 24px; height: 24px; padding: 0 12px;">
+                        <a style="display: block; cursor: pointer; width: 24px; height: 24px;" href="https://t.me/whoer_official">
+                            <img style="display: block; margin: 0 auto; width: 20px; height: 20px; padding: 2px 0 0;" src="https://whox.is/mail-icons/telegram.png" alt="telegram">
+                        </a>
+                    </td>
+                    <td style="width: 24px; height: 24px; padding: 0 12px;">
+                        <a style="display: block; cursor: pointer; width: 24px; height: 24px;" href="https://facebook.com/groups/whoerofficial">
+                            <img style="display: block; margin: 0 auto; width: 8px; height: 15px; padding: 4px 0 0;" src="https://whox.is/mail-icons/facebook.png" alt="facebook">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+            <table align="center" cellspacing="0" cellpadding="0" style="margin: 40px auto 0; text-align: center;">
+                <tr>
+                    <td style="padding: 0 4px;">
+                        <a style="display: block; cursor: pointer;" href="https://play.google.com/store/apps/details?id=com.whoervpn.provider&hl={{mail_icons_play_google}}">
+                            <img style="display: block; margin: 0 auto; width: 135px; height: 38px;" src="https://whox.is/mail-icons/googleplay.png" alt="google-play">
+                        </a>
+                    </td>
+                    <td style="padding: 0 4px;">
+                        <a style="display: block; cursor: pointer;" href="https://apps.apple.com/us/app/{{mail_icons_apple_app}}">
+                            <img style="display: block; margin: 0 auto; width: 135px; height: 38px;" src="https://whox.is/mail-icons/appstore.png" alt="app-store">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+            <p style="color: #BFCBDC; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px; margin: 32px auto 0; text-align: center;">
+                {{unsubscribe_text}}
+                <a style="color: #BFCBDC; text-decoration: underline;" href="https://whoer.net/{{lang}}/unsubscribe?email={{email}}&token={{unsubscribe_token}}">{{unsubscribe_tail}}</a>
+            </p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var stripe = Stripe('{{data.pub_key}}');
+
+        fetch('/vpn/payment/stripe/create-checkout-session', {
+          method: 'POST',
+          headers: {'Content-Type':'application/x-www-form-urlencoded'},
+          body: 'email={{data.email | safe}}&amount={{data.amount | safe}}&description={{data.description | safe}}&lang={{data.lang}}&sign={{data.sign}}&subs={{data.subs}}&coupon={{data.coupon}}&days={{data.days}}',
+        })
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(session) {
+          console.log(session.id);
+          var request = new XMLHttpRequest();
+          request.open('GET', '/vpn/payment/store_session/stripe?payment_id={{data.payment_id}}&sign={{data.sign_2}}&session_id=' + session.id, false); 
+          request.send(null);
+          return stripe.redirectToCheckout({ sessionId: session.id });
+        })
+        .then(function(result) {
+          if (result.error) {
+            alert(result.error.message);
+          }
+        })
+        .catch(function(error) {
+          console.error('Error:', error);
+        });
+    </script>
+  </body>
+</html>

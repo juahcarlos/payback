@@ -1,0 +1,32 @@
+known_first_party = ["dbm", "langs", "libs"]
+
+[tool.poetry]
+name = "be"
+version = "0.1.0"
+authors = ["sam <sam@home.com>"]
+
+[tool.poetry.dependencies]
+asyncio = "3.4.3"
+aiomysql = "0.2.0"
+redis = ">=4.2.0"
+fastapi = "*"
+fastapi-sessions = "*"
+fastapi-mail = "*"
+prometheus-fastapi-instrumentator = "*"
+jinja2 = "3.1.2"
+pydantic = "2.5.2"
+pydantic-settings = "2.1.0"
+python-multipart = "0.0.12"
+sqlalchemy = "2.0.18"
+uvicorn = "0.22.0"
+pytest = "7.4.0"
+pytest-asyncio = "0.21.1"
+httpx = "0.24.1"
+requests = "2.31.0"
+grpclib = "0.4.5"
+betterproto = "2.0.0b4"
+pytz = "2023.3.post1"
+geoip2 = "*"
+ipwhois = "1.2.0"
+cryptography = "41.0.7"
+
