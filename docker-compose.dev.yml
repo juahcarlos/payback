@@ -1,0 +1,42 @@
+services:
+  api:
+    build:
+      context: .
+      args:
+        UV_SYNC_ARGS: "--group dev"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - 8000:8000
+    volumes:
+      - ./app:/app/app
+      - ./tests:/app/tests
+    env_file:
+      - .env
+    environment:
+      COOKIE_PASSWORD: ${COOKIE_PASSWORD:-local-dev-cookie-secret}
+      BUY_FILLING_SECRET: ${BUY_FILLING_SECRET:-local-dev-buy-filling-secret}
+      HIDDEN_CAPTCHA_SECRET: ${HIDDEN_CAPTCHA_SECRET:-local-dev-captcha-secret}
+      EMAIL_UNSUBSCRIBE_SECRET: ${EMAIL_UNSUBSCRIBE_SECRET:-local-dev-unsubscribe-secret}
+      SERVER_SECRET_KEY: ${SERVER_SECRET_KEY:-local-dev-server-secret}
+      SIGNATURE_SECRET: ${SIGNATURE_SECRET:-local-dev-signature-secret}
+      CRYPTOMUS_SECRET_KEY: ${CRYPTOMUS_SECRET_KEY:-local-dev-cryptomus-secret}
+      STRIPE_CHECKOUT_SECRET: ${STRIPE_CHECKOUT_SECRET:-local-dev-stripe-checkout-secret}
+      STRIPE_ENDPOINT_SECRET: ${STRIPE_ENDPOINT_SECRET:-local-dev-stripe-endpoint-secret}
+      MAIL_PASSWORD: ${MAIL_PASSWORD:-local-dev-mail-password}
+      REDIS_STARTUP_CHECK: "false"
+    command: [
+      "uvicorn", "app.main:app",
+      "--host", "0.0.0.0",
+      "--port", "8000",
+      "--proxy-headers",
+      "--forwarded-allow-ips", "*"
+    ]
+
+  # redis:
+  #  image: redis:7.4-alpine
+  #  restart: always
+  #  ports:
+  #    - "6379:6379"
+  #  volumes:
+  #    - redis_data:/data

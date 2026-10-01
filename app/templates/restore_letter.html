@@ -1,0 +1,341 @@
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xml:lang="en"
+	lang="en"
+>
+	<head>
+		<title>Recovery</title>
+		<meta
+			http-equiv="Content-Type"
+			content="text/html; charset=utf-8"
+		/>
+		<script>
+			function copyToClipboard() {
+				const text = document.getElementById('authCode').innerText
+				navigator.clipboard
+					.writeText(text)
+					.then(() => {})
+					.catch(err => {
+						console.error('Failed to copy text: ', err)
+					})
+			}
+		</script>
+	</head>
+	<body style="width: 100%; overflow-x: hidden">
+		<table style="box-sizing: border-box; overflow: hidden; margin: 0 auto">
+			<!-- Logo  -->
+			<tr>
+				<td>
+					<img
+						style="display: block; margin: 0 auto"
+						src="https://whovpn.net/mail-icons/whovpn.png"
+						alt="whovpn"
+					/>
+				</td>
+			</tr>
+			<!-- Thanks  -->
+			<tr>
+				<td style="text-align: center">
+					<h2
+						style="
+							max-width: 450px;
+							margin: 40px auto;
+							font-family: Arial, sans-serif;
+							font-size: 40px;
+							line-height: 48px;
+							font-weight: 500;
+						"
+					>
+						{{whoer_hello}}
+						<br />
+						{{whoer_is_here}}
+					</h2>
+					<p
+						style="
+							margin: 0 auto;
+							font-family: Arial, sans-serif;
+							font-size: 24px;
+							line-height: 17px;
+							font-weight: 400;
+						"
+					>
+						{{forgot_your_code}}
+					</p>
+				</td>
+			</tr>
+			<!-- Text  -->
+			<tr>
+				<td style="text-align: center">
+					<p
+						style="
+							margin: 80px 0 0;
+							font-family: Arial, sans-serif;
+							font-size: 18px;
+							line-height: 22px;
+							font-weight: 400;
+							color: #8796ab;
+						"
+					>
+						{{here_is_the_code}}:
+					</p>
+				</td>
+			</tr>
+			<!-- Code  -->
+			<tr>
+				<td style="position: relative; text-align: center">
+					<div style="display: inline-block; text-align: center">
+						<span
+							id="authCode"
+							style="
+								display: inline-block;
+								margin: 16px 8px 0 0;
+								font-family: Arial, sans-serif;
+								font-size: 32px;
+								line-height: 22px;
+								font-weight: 500;
+								color: #10a6ca;
+							"
+						>
+							{{code}}
+						</span>
+						<button
+							onclick="copyToClipboard()"
+							style="
+								margin: 16px 0 0;
+								border: 0;
+								padding: 0;
+								background: transparent;
+								cursor: pointer;
+							"
+						>
+							<img
+								style="display: inline-block"
+								src="https://whovpn.net/mail-icons/copy.png"
+								alt="copy"
+							/>
+						</button>
+					</div>
+				</td>
+			</tr>
+			<!--  Promo  -->
+			<tr>
+				<td style="text-align: center; position: relative">
+					<p
+						style="
+							margin: 80px auto 0;
+							max-width: 450px;
+							font-family: Arial, sans-serif;
+							font-size: 24px;
+							line-height: 28px;
+							font-weight: 400;
+							color: #212936;
+						"
+					>
+						{{thought_discount}}
+						<span style="text-decoration: none; color: #0290e0">
+							{{coupon_percent}}%
+						</span>
+						{{thought_discount_next}}
+					</p>
+					<p
+						style="
+							margin: 24px auto 0;
+							font-family: Arial, sans-serif;
+							font-size: 24px;
+							line-height: 28px;
+							font-weight: 400;
+							text-transform: uppercase;
+							border-radius: 40px;
+							padding: 14px 24px;
+							box-sizing: border-box;
+							background: #fff;
+							border: 1px solid #008de4;
+							max-width: 450px;
+							color: #212936;
+						"
+					>
+						{{coupon}}
+					</p>
+					<p
+						style="
+							margin: 8px 0 0;
+							color: #8796ab;
+							font-family: Arial, sans-serif;
+							font-size: 18px;
+							line-height: 22px;
+							font-weight: 400;
+						"
+					>
+						* {{coupon_valid}}
+					</p>
+				</td>
+			</tr>
+			<!--  Text  -->
+			<tr>
+				<td style="text-align: center">
+					<p
+						style="
+							margin: 80px auto;
+							max-width: 450px;
+							font-family: Arial, sans-serif;
+							font-size: 24px;
+							line-height: 28px;
+							color: #000;
+							font-weight: 400;
+						"
+					>
+						{{your_specialist}}
+					</p>
+				</td>
+			</tr>
+			<!--  Footer  -->
+			<tr>
+				<td
+					style="
+						background: #10101a;
+						padding: 40px 0 34px;
+						box-sizing: border-box;
+						width: 100%;
+						border-radius: 24px;
+					"
+				>
+					<!-- Footer: logo -->
+					<table
+						align="center"
+						cellspacing="0"
+						cellpadding="0"
+						border="0"
+						style="margin: 0 auto"
+					>
+						<tr>
+							<td
+								width="40"
+								height="40"
+								style="width: 40px; height: 40px; line-height: 0; font-size: 0"
+							>
+								<img
+									width="40"
+									height="40"
+									border="0"
+									style="
+										display: block;
+										width: 40px;
+										min-width: 40px;
+										max-width: 40px;
+										height: 40px;
+										border: 0;
+										outline: none;
+									"
+									src="https://whovpn.net/mail-icons/whovpn-dark.png"
+									alt="WhoVPN"
+								/>
+							</td>
+						</tr>
+					</table>
+					<!-- Footer: links -->
+					<table
+						align="center"
+						cellspacing="0"
+						cellpadding="0"
+						border="0"
+						style="margin: 24px auto 0; text-align: center"
+					>
+						<tr>
+							<td style="padding: 0">
+								<a
+									style="
+										color: #bfcbdc;
+										font-family: Arial, sans-serif;
+										font-size: 16px;
+										line-height: 20px;
+										text-decoration: underline;
+									"
+									href="https://t.me/who_team"
+								>
+									{% if lang == 'ru' %}Техническая поддержка{% else %}Technical Support{% endif %}
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="padding: 12px 0 0">
+								<a
+									style="
+										color: #bfcbdc;
+										font-family: Arial, sans-serif;
+										font-size: 16px;
+										line-height: 20px;
+										text-decoration: underline;
+									"
+									href="https://t.me/{% if lang == 'ru' %}whoer_official_chat{% else %}whoernet_chat{% endif %}"
+								>
+									{% if lang == 'ru' %}Сообщество в Телеграм{% else %}Telegram community{% endif %}
+								</a>
+							</td>
+						</tr>
+					</table>
+					<table
+						align="center"
+						cellspacing="0"
+						cellpadding="0"
+						style="margin: 40px auto 0; text-align: center"
+					>
+						<tr>
+							<td style="padding: 0 4px">
+								<a
+									style="display: block; cursor: pointer"
+									href="https://play.google.com/store/apps/details?id=com.whoervpn.provider&hl={{mail_icons_play_google}}"
+								>
+									<img
+										style="
+											display: block;
+											margin: 0 auto;
+											width: 135px;
+											height: 38px;
+										"
+										src="https://whovpn.net/mail-icons/googleplay.png"
+										alt="google-play"
+									/>
+								</a>
+							</td>
+							<td style="padding: 0 4px">
+								<a
+									style="display: block; cursor: pointer"
+									href="https://apps.apple.com/us/app/{{mail_icons_apple_app}}"
+								>
+									<img
+										style="
+											display: block;
+											margin: 0 auto;
+											width: 135px;
+											height: 38px;
+										"
+										src="https://whovpn.net/mail-icons/appstore.png"
+										alt="app-store"
+									/>
+								</a>
+							</td>
+						</tr>
+					</table>
+					<p
+						style="
+							color: #bfcbdc;
+							font-family: Arial, sans-serif;
+							font-size: 16px;
+							line-height: 20px;
+							margin: 32px auto 0;
+							text-align: center;
+						"
+					>
+						{{unsubscribe_text}}
+						<a
+							style="color: #bfcbdc; text-decoration: underline"
+							href="https://whoer.net/{% if lang == 'ru' %}ru/{% endif %}unsubscribe?email={{email|urlencode}}&token={{unsubscribe_token}}"
+						>
+							{{unsubscribe_tail}}
+						</a>
+					</p>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

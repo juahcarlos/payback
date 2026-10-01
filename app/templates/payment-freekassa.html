@@ -1,0 +1,29 @@
+<form class="order-form checkout-form" action="{{invoice_url}}"
+      method="get"
+>
+  <fieldset>
+    <div class="two-columns">
+      <div class="col">
+        <div class="row">
+          <div class="ico">
+            <img src="/images/ico-84.png" width="48" height="48" alt="">
+          </div>
+          <span class="description">
+            <b>Price</b>: {{amount}}<br>
+            <b>Period</b>:
+            {{plans.num}}
+            {{plans.name}}
+            <br>
+            <b>Payment system</b>:
+            Freekassa<br>
+          </span>
+        </div>
+        <div style="padding-top: 20px">
+
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+  <input class="btn-pay" type="submit" value="Confirm" />
